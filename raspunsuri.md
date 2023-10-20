@@ -11,5 +11,6 @@ Laborator 3 - exercitiul 3
 - fieldOfView: Acest parametru reprezintă unghiul de câmp (Field of View) care determină cât de multe din scena 3D sunt vizibile. De obicei, acesta este specificat în radiani și definește cât de larg sau strâmt este unghiul vizual al camerei. 
 -aspectRatio (raportul aspectului): Acest parametru reprezintă raportul dintre lățimea și înălțimea ferestrei de vizualizare sau a ecranului. 
 - nearPlaneDistance (distanța planului apropiat): Acest parametru specifică distanța la care se află planul apropiat al frustum-ului de proiecție.- farPlaneDistance (distanța planului îndepărtat): Acest parametru specifică distanța la care se află planul îndepărtat al frustum-ului de proiecție.
+
 Domeniul de valori de valori pentru:
 - fieldOfView: 0 și π
