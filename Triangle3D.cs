@@ -71,9 +71,9 @@ namespace Stefanuca
         }
 
         //Pentru cerinta 8
-        /*public void Draw()
+        public void Draw()
         {
-            if (visibility)
+            /*if (visibility)
             {
                 GL.PointSize(pointsize);
                 GL.LineWidth(linewidth);
@@ -84,13 +84,11 @@ namespace Stefanuca
                 GL.Vertex3(pointB);
                 GL.Vertex3(pointC);
                 GL.End();
-            }
-        }*/
+            }*/
 
         //Pentru cerinta 9
-        public void Draw()
-        {
-            if (visibility)
+
+        if (visibility)
             {
                 GL.PointSize(pointsize);
                 GL.LineWidth(linewidth);
@@ -115,6 +113,9 @@ namespace Stefanuca
                 }
             }
         }
+
+        
+        
         private void DisplayVertexColors()
         {
             Console.WriteLine($"Vertex 1 - R: {colorA.R}, G: {colorA.G}, B: {colorA.B}");

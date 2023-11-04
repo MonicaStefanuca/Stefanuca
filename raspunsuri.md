@@ -13,3 +13,4 @@ Laborator 3 - exercitiul 3
 - nearPlaneDistance (distanța planului apropiat): Acest parametru specifică distanța la care se află planul apropiat al frustum-ului de proiecție.- farPlaneDistance (distanța planului îndepărtat): Acest parametru specifică distanța la care se află planul îndepărtat al frustum-ului de proiecție.
 Domeniul de valori de valori pentru:
 - fieldOfView: 0 și π
+
