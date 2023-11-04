@@ -15,6 +15,7 @@ namespace Stefanuca
 
         }
     }
+    //Pentru tema 2
     /*class Program : GameWindow
     {
         //Laborator 3: exercitii 1 si 2
