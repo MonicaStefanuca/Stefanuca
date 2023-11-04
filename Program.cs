@@ -75,8 +75,11 @@ namespace Stefanuca
         {
             GL.Clear(ClearBufferMask.ColorBufferBit);
 
+<<<<<<< HEAD
+=======
             // Modul imediat! Suportat până la OpenGL 3.5 (este ineficient din cauza multiplelor apeluri de
             // funcții).
+>>>>>>> ee6da4927ba5f520443c270298f21e3ff6f47af7
             GL.Begin(PrimitiveType.Triangles);
 
             GL.Color3(Color.DeepPink);
@@ -87,7 +90,10 @@ namespace Stefanuca
             GL.Vertex2(0.5f + position.X, 0.5f + position.Y);
 
             GL.End();
+<<<<<<< HEAD
+=======
             // Sfârșitul modului imediat!
+>>>>>>> ee6da4927ba5f520443c270298f21e3ff6f47af7
 
             this.SwapBuffers();
         }
