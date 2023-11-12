@@ -3,6 +3,7 @@ using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
 using OpenTK.Input;
 
+using Stefanuca;
 
 using System;
 using System.Drawing;
@@ -15,6 +16,7 @@ namespace Stefanuca
 
         private KeyboardState previousKeyboard;
         private Triangle3D firstTriangle;
+        private Cube3D firstCube;
 
 
         // CONST
@@ -24,6 +26,7 @@ namespace Stefanuca
         public Window3D() : base(1280, 768, new GraphicsMode(32, 24, 0, 8))
         {
             VSync = VSyncMode.On;
+            firstCube = new Cube3D("coordonateCub.txt");
 
             firstTriangle = new Triangle3D("coordonate.txt");
 
@@ -84,30 +87,59 @@ namespace Stefanuca
             }
 
             //Pentru cerinta 8
-            /*if (currentKeyboard.IsKeyDown(Key.R))
+            /*if (currentKeyboard.IsKeyDown(Key.R)&& !previousKeyboard[Key.R])
             {
                 firstTriangle.IncreaseRed();
             }
-            else if (currentKeyboard.IsKeyDown(Key.T))
+            else if (currentKeyboard.IsKeyDown(Key.T&& !previousKeyboard[Key.R]))
             {
                 firstTriangle.DecreaseRed();
             }
-            else if (currentKeyboard.IsKeyDown(Key.G))
+            else if (currentKeyboard.IsKeyDown(Key.G)&& !previousKeyboard[Key.G])
             {
                 firstTriangle.IncreaseGreen();
             }
-            else if (currentKeyboard.IsKeyDown(Key.Y))
+            else if (currentKeyboard.IsKeyDown(Key.Y)&& !previousKeyboard[Key.Y])
             {
                 firstTriangle.DecreaseGreen();
             }
-            else if (currentKeyboard.IsKeyDown(Key.B))
+            else if (currentKeyboard.IsKeyDown(Key.B)&& !previousKeyboard[Key.B])
             {
                 firstTriangle.IncreaseBlue();
             }
-            else if (currentKeyboard.IsKeyDown(Key.N))
+            else if (currentKeyboard.IsKeyDown(Key.N)&& !previousKeyboard[Key.N])
             {
                 firstTriangle.DecreaseBlue();
             }*/
+
+            if (currentKeyboard.IsKeyDown(Key.R) && !previousKeyboard[Key.R])
+            {
+                firstCube.IncreaseColorRed(new int[] { 1, 2, 3 });
+            }
+            else if (currentKeyboard.IsKeyDown(Key.T) && !previousKeyboard[Key.T])
+            {
+                firstCube.DecreaseColorRed(new int[] { 1, 2, 3 });
+            }
+            else if (currentKeyboard.IsKeyDown(Key.G) && !previousKeyboard[Key.G])
+            {
+                firstCube.IncreaseColorGreen(new int[] { 2 });
+            }
+            else if (currentKeyboard.IsKeyDown(Key.Y) && !previousKeyboard[Key.Y])
+            {
+                firstCube.DecreaseColorGreen(new int[] { 3 });
+            }
+            else if (currentKeyboard.IsKeyDown(Key.B) && !previousKeyboard[Key.B])
+            {
+                firstCube.IncreaseColorBlue(new int[] { 4 });
+            }
+            else if (currentKeyboard.IsKeyDown(Key.N) && !previousKeyboard[Key.N])
+            {
+                firstCube.DecreaseColorBlue(new int[] { 1, 2, 5 });
+            }
+            if (currentKeyboard.IsKeyDown(Key.Space) && !previousKeyboard.IsKeyDown(Key.Space))
+            {
+                firstCube.RandomizeColors();
+            }
 
             previousKeyboard = currentKeyboard;
             // END logic code
@@ -121,7 +153,13 @@ namespace Stefanuca
             GL.Clear(ClearBufferMask.DepthBufferBit);
 
             // RENDER CODE
-            firstTriangle.Draw();
+
+            //Pentru laborator 3
+            //firstTriangle.Draw();
+
+            //Pentru laborator 4
+            firstCube.Draw();
+
 
             // END render code
             SwapBuffers();
@@ -140,10 +178,11 @@ namespace Stefanuca
             Console.WriteLine(" H - meniu ajutor");
             Console.WriteLine(" ESC - parasire aplicatie");
 
-            //Pentru cerinta 8
-            /*Console.WriteLine(" R/T - Creste/Scade canalul Rosu");
+            //Pentru cerinta 8 din lab 3 si pentru cerinta 2 din lab 4
+            Console.WriteLine(" R/T - Creste/Scade canalul Rosu");
             Console.WriteLine(" G/Y - Creste/Scade canalul Verde");
-            Console.WriteLine(" B/N - Creste/Scade canalul Albastru");*/
+            Console.WriteLine(" B/N - Creste/Scade canalul Albastru");
+            Console.WriteLine("Space - recoloreaza cubul random");
         }
 
     }
